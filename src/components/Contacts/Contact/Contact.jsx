@@ -2,8 +2,8 @@ import { Gi3DMeeple } from "react-icons/gi";
 import { GiPerspectiveDiceSixFacesOne } from "react-icons/gi";
 import css from "../Contact/Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../../redux/contactsOps";
 import toast from "react-hot-toast";
+import { deleteContact } from "../../../redux/contacts/operations";
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
