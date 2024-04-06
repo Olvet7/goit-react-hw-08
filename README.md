@@ -22,3 +22,5 @@ Currently, two official plugins are available:
 
 ____Вебінар:
 > рендер за умовою 
+> реєстрація (необхідно отримати токен)
+> logIn

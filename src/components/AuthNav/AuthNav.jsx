@@ -1,8 +1,18 @@
+import { NavLink } from "react-router-dom";
+// import css from "./AuthNav.module.css";
+import { Toolbar, Typography } from "@mui/material";
+import LoginIcon from "@mui/icons-material/Login";
+
 export default function AuthNav() {
   return (
     <div>
-        <h1>Auth Nav</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam quae eveniet temporibus soluta similique velit eius consequuntur impedit ut animi, veritatis, quaerat assumenda inventore qui aspernatur deserunt dolor. Illum, minima!</p>
+      <Toolbar sx={{ display: "flex", gap: "16px", fontSize: "16px" }}>
+        <NavLink to="/register">
+          <Typography variant="h6" component="div">Register</Typography>
+        </NavLink>
+        <NavLink to="/login"><Typography variant="h6" component="div">Log In <LoginIcon /></Typography>
+        </NavLink>
+      </Toolbar>
     </div>
-  )
+  );
 }

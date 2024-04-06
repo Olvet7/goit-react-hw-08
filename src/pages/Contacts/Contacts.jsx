@@ -14,7 +14,7 @@ export default function Contacts() {
   
   return (
     <div>
-      <h1>Contacts</h1>
+     {/* <p>There are your Contact list</p> */}
       <ContactList />
     </div>
   );

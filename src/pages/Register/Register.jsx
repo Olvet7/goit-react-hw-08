@@ -1,7 +1,20 @@
+import { useSelector } from "react-redux";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import { selectLoading } from "../../redux/contacts/selectors";
+import CircularProgress from '@mui/material/CircularProgress'
+
+
 export default function Register() {
+
+  const loader = useSelector(selectLoading);
+
   return (
     <div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo distinctio ipsam, vero impedit atque nihil, expedita unde quos totam eos delectus ipsum excepturi culpa provident quidem! Minima accusantium dolorum facilis.</p>
+        <p>Not registered? It takes 30 sec 😉</p>
+        {loader && <CircularProgress />}
+        <RegistrationForm/>
     </div>
   )
 }
+
+

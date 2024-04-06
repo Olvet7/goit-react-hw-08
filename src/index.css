@@ -28,7 +28,6 @@ body {
   display: flex;
   justify-content: center;
   /* place-items: center; */
-  font-size: clamp(16px, 4vw, 20px);
   min-width: 320px;
   min-height: 100vh;
 }
