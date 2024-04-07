@@ -17,6 +17,7 @@ export default function RegistrationForm() {
   });
 
   const handleSubmit = (values, actions) => {
+    console.log(values);
     dispatch(register(values));
     actions.resetForm();
   };
@@ -39,11 +40,14 @@ export default function RegistrationForm() {
           display="flex"
           alignItems="center"
           gap={20}
-          p={0}
-          
-          sx={{ border: "2px solid grey", margin: "0 auto", paddingBottom: "16px" }}
+          p={0}          
+          sx={{
+            border: "2px solid grey",
+            margin: "0 auto",
+            paddingBottom: "16px",
+          }}
         >
-          <Form autoComplete="off">
+          <Form autoComplete="on">
             <label>
               Username
               <Field type="name" name="name" />
@@ -56,7 +60,16 @@ export default function RegistrationForm() {
               Password
               <Field type="password" name="password" />
             </label>
-            <Button variant="outlined" type="submit" sx={{boxShadow: '0 0 0 0.1rem rgba(0,123,255,.5)', marginTop: "16px"}}>Register</Button>
+            <Button
+              variant="outlined"
+              type="submit"
+              sx={{
+                boxShadow: "0 0 0 0.1rem rgba(0,123,255,.5)",
+                marginTop: "16px",
+              }}
+            >
+              Register
+            </Button>
           </Form>
         </Box>
       </Formik>

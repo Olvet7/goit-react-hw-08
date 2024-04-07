@@ -9,19 +9,23 @@ const authSlice = createSlice({
       email: null,
     },
     token: null,
-    isLoggedIn: true,
+    isLoggedIn: false,
     isRefreshing: false,
   },
   extraReducers: (builder) =>
     builder
+    .addCase(register.pending, state => {
+      state.error = false;
+      state.loading = true;
+    })
     .addCase(register.fulfilled, (state, action) => {
       state.user = action.payload.user;
-      state.tiken = action.payload.token;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
     })
     .addCase(logIn.fulfilled, (state, action) => {
         state.user = action.payload.user;
-        state.tiken = action.payload.token;
+        state.token = action.payload.token;
         state.isLoggedIn = true;
       })
     .addCase(logOut.fulfilled, (state) => {
