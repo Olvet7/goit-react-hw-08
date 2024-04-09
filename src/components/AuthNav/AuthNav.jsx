@@ -1,13 +1,7 @@
 import { NavLink } from "react-router-dom";
-import {useDispatch} from "react-redux";
-// import css from "./AuthNav.module.css";
-import { Box, Typography, Button } from "@mui/material";
-import { logIn } from "../../redux/auth/operations";
-// import LoginIcon from "@mui/icons-material/Login";
+import { Box, Typography } from "@mui/material";
 
 export default function AuthNav() {
-
-  const dispatch = useDispatch();
 
   return (
     <div>

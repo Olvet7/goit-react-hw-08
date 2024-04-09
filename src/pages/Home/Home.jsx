@@ -1,5 +1,6 @@
 // Home
 import { Box } from "@mui/material";
+import RecentActorsIcon from '@mui/icons-material/RecentActors';
 
 export default function Home() {
 
@@ -11,6 +12,7 @@ export default function Home() {
         This app provides you maintain your contacts. <br />
         Enjoy!
       </h4>
+      <RecentActorsIcon fontSize="large"/>
     </Box>
   );
 }
