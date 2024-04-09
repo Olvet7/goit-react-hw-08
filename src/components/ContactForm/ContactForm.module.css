@@ -6,7 +6,7 @@
   align-items: center;
   /* min-width: 300px; */
   width: 100%;
-  border: 2px orange solid;
+  /* border: 2px orange solid; */
   text-align: left;
   margin-bottom: 20px;
 }
@@ -23,7 +23,7 @@
 
 .btn {
   padding: 5px 14px;
-  color: green;
+  color: white;
   background-color: orange;
   text-transform: uppercase;
   border: none;

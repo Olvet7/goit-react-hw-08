@@ -13,6 +13,7 @@ export default function LoginForm() {
   });
 
   const handleSubmit = (values, actions) => {
+    console.log(values);
     dispatch(logIn(values));
     actions.resetForm();
   };
@@ -22,7 +23,6 @@ export default function LoginForm() {
       <Container>
         <Formik
           initialValues={{
-            name: "",
             email: "",
             password: "",
           }}

@@ -38,14 +38,36 @@ export const logIn = createAsyncThunk(
     }
 });
 
-// logout - POST /users/logout
+// logout - POST /users/logout  
 // Body: token
 export const logOut = createAsyncThunk(
     "auth/logout", async (_, thunkAPI) => {
     try {
         await axios.post('/users/logout');
+        console.log("вийди звідси, розбійник!")
         clearAuthHeader();
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
+export const refreshUser = createAsyncThunk(
+  "auth/refresh", async (_, thunkAPI) => {
+
+    // Reading the token from the state via getState()
+    const reduxState = thunkAPI.getState();
+    const savedToken = reduxState.auth.token;
+    
+    // Add it to the HTTP header and perform the request
+    setAuthHeader(savedToken);
+    const response = await axios.get("/users/current");
+    return response.data;
+  }, 
+  {condition: (_, {getState}) => {
+    const reduxState = getState();
+    const savedToken = reduxState.auth.token;
+    
+    // If there is no token, exit without performing any request
+    return savedToken !== null;
+  }}
+)

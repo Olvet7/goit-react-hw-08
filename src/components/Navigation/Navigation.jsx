@@ -14,7 +14,7 @@ export default function Navigation() {
       display:"flex",
       flexDirection:"row",
       gap:"16px",
-      alignItems:"baseline",
+      alignItems: "center",
     fontSize: "20px"}}
     >
       <NavLink to="/">Home</NavLink>

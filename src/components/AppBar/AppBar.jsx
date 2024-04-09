@@ -11,18 +11,19 @@ import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
+  
   return (
-    <Container>
+    <Container >
       <AppBarSide position="static" sx={{
           display: "flex",
           flexDirection: "row",
-          teaxtAlign: "baseline",
-          alignItems: "baseline",
+          textAlign: "baseline",
+          alignItems: "center",
           backgroundColor: "#ffc400",
           justifyContent: 'space-between',
           gap: "8px",
           height: '60px',
+          padding: "0 0",
         }}>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}

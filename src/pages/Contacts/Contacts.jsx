@@ -4,6 +4,7 @@ import ContactList from "../../components/Contacts/ContactList/ContactList";
 import { fetchContacts } from "../../redux/contacts/operations";
 import ContactForm from "../../components/ContactForm/ContactForm/";
 
+import SearchBox from "../../components/SearchBox/SearchBox";
 // Contacts
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function Contacts() {
     <div>
       {/* <p>There are your Contact list</p> */}
       <ContactForm />
+      <SearchBox />
       <ContactList />
     </div>
   );

@@ -18,6 +18,7 @@ export default function RegistrationForm() {
 
   const handleSubmit = (values, actions) => {
     console.log(values);
+    // console.log(1)
     dispatch(register(values));
     actions.resetForm();
   };

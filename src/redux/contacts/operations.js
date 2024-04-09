@@ -8,6 +8,7 @@ export const fetchContacts = createAsyncThunk(
   "contacts/fetchAllContacts",
   async (_, thunkAPI) => {
     try {
+      console.log("запит за контактами");
       const response = await axios.get("/contacts");
       console.log(response.data);
       return response.data;

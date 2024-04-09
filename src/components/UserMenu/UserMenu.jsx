@@ -9,7 +9,7 @@ export default function UserMenu() {
 
   return (
     <>
-      <p>Hi, user! {user.name}✨</p>
+      <p>Hello, {user.name}✨</p>
       <Button variant="outlined"
         type="button"
         onClick={() => {
