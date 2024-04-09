@@ -13,9 +13,10 @@ export default function AppBar() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   
   return (
-    <Container >
+    <Container disableGutters>
       <AppBarSide position="static" sx={{
           display: "flex",
+          width: "100%",
           flexDirection: "row",
           textAlign: "baseline",
           alignItems: "center",
@@ -23,7 +24,10 @@ export default function AppBar() {
           justifyContent: 'space-between',
           gap: "8px",
           height: '60px',
-          padding: "0 0",
+          padding: {
+            xs: 0, 
+            md: 0, 
+          },
         }}>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}

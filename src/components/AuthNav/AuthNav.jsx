@@ -1,18 +1,40 @@
 import { NavLink } from "react-router-dom";
+import {useDispatch} from "react-redux";
 // import css from "./AuthNav.module.css";
-import { Toolbar, Typography } from "@mui/material";
-import LoginIcon from "@mui/icons-material/Login";
+import { Box, Typography, Button } from "@mui/material";
+import { logIn } from "../../redux/auth/operations";
+// import LoginIcon from "@mui/icons-material/Login";
 
 export default function AuthNav() {
+
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <Toolbar sx={{ display: "flex", gap: "16px", fontSize: "16px" }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: "16px",
+          fontSize: "16px",
+          alignItems: "center",
+        }}
+      >
         <NavLink to="/register">
-          <Typography variant="h6" component="div">Register</Typography>
+          <Typography variant="h7" component="div" color="white">
+            Register
+          </Typography>
         </NavLink>
-        <NavLink to="/login"><Typography variant="h6" component="div">Log In <LoginIcon /></Typography>
+        <NavLink to="/login">
+          <Box sx={{
+          display: "flex",
+          alignItems: "center",
+        }}>
+          <Typography variant="h7" component="div" color="white" sx={{paddingRight: "20px"}}>
+            Log In
+          </Typography>
+          </Box>
         </NavLink>
-      </Toolbar>
+      </Box>
     </div>
   );
 }

@@ -24,7 +24,7 @@
 .btn {
   padding: 5px 14px;
   color: white;
-  background-color: orange;
+  background-color: var(--accent-color);
   text-transform: uppercase;
   border: none;
   border-radius: 0%;

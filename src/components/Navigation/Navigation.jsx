@@ -1,5 +1,5 @@
-// Home + Contacts + Search
-
+// Home + Contacts
+import css from "../Navigation/Navigation.module.css"
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
@@ -10,15 +10,18 @@ export default function Navigation() {
 
   return (
     <Box
-      sx={{height:"60px",
-      display:"flex",
-      flexDirection:"row",
-      gap:"16px",
-      alignItems: "center",
-    fontSize: "20px"}}
+      sx={{
+        padding: "0 20px", 
+        height: "60px",
+        display: "flex",
+        flexDirection: "row",
+        gap: "16px",
+        alignItems: "center",
+        fontSize: "16px",
+      }}
     >
-      <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      <NavLink to="/" className={css.link}>Home</NavLink>
+      {isLoggedIn && <NavLink to="/contacts" className={css.link}>Contacts</NavLink>}
     </Box>
   );
 }

@@ -1,5 +1,7 @@
 .inputBlock {
   margin-bottom: 20px;
+  width: 250px;
+  margin: 0 auto;
   /* border: 2px orange solid; */
   padding-bottom: 7px;
 }

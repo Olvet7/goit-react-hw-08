@@ -2,7 +2,8 @@ import { Formik, Form, Field } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { logIn } from "../../redux/auth/operations";
-import { Container, Box, Button } from "@mui/material";
+import { Container, Box, Button, TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -13,7 +14,6 @@ export default function LoginForm() {
   });
 
   const handleSubmit = (values, actions) => {
-    console.log(values);
     dispatch(logIn(values));
     actions.resetForm();
   };
@@ -31,28 +31,30 @@ export default function LoginForm() {
         >
           <Box
             height={200}
-            width={200}
+            // width={}
             my={4}
             display="flex"
+            flexDirection="column"
             alignItems="center"
             gap={8}
             p={0}
-            sx={{ border: "2px solid grey" , margin: '0 auto'}}
+            sx={{margin: '0 auto'}}
           >
             <Form>
               <label>
                 Email
-                <Field type="email" name="email" />
+                <Field type="email" name="email" as={TextField} fullWidth/>
               </label>
               <label>
                 Password
-                <Field type="password" name="password" />
+                <Field type="password" name="password" as={TextField} fullWidth/>
               </label>
-              <Button variant="outlined" type="submit" sx={{boxShadow: '0 0 0 0.1rem rgba(0,123,255,.5)', marginTop: "16px"}}>Log In</Button>
+              <Button variant="outlined" type="submit" sx={{boxShadow: '0 0 0 0.1rem rgba(0,123,255,.5)', marginTop: "16px", color: "var(--accent-color)", borderColor: "var(--accent-color)", height: "20px"}}>Log In</Button>
             </Form>
           </Box>
         </Formik>
-      </Container>
+        <p>Or <Link to="/register">Register</Link></p>
+        </Container>
     </>
   );
 }

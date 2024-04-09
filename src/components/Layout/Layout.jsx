@@ -9,7 +9,7 @@ export default function Layout() {
     <Container fixed>
       <Box
         sx={{
-          bgcolor: "#cfe8fc",
+          // bgcolor: "#cfe8fc",
           height: "100vh",
           width: "100vh",
           padding: "0 0 ",
