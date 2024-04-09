@@ -14,9 +14,8 @@ export default function ContactForm() {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = async (values, actions) => {
-    try {
-      await dispatch(
+  const handleSubmit = (values, actions) => {
+     dispatch(
         addContact({
           name: values.name,
           number: values.number,
@@ -24,10 +23,7 @@ export default function ContactForm() {
       );
       actions.resetForm();
       toast.success("Contact added! 😁")
-    } catch (error) {
-      toast.error("Not add contact")
-    }
-  };
+    };
 
   const nameFieldId = useId();
   const phoneFieldId = useId();
