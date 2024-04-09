@@ -5,8 +5,14 @@ import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { addContact } from "../../redux/contacts/operations";
+import {TextField} from "@mui/material";
+import { useSelector } from "react-redux";
+import { selectContacts } from "../../redux/contacts/selectors";
 
 export default function ContactForm() {
+
+  const items = useSelector(selectContacts);
+
   const initialValues = {
     name: "",
     number: "",
@@ -15,6 +21,13 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
+
+    const isDuplicate = items.some(item => item.number === values.number)
+    if(isDuplicate) {
+      toast.error("This number already in list!")
+      return;
+    }
+
      dispatch(
         addContact({
           name: values.name,
@@ -57,6 +70,7 @@ export default function ContactForm() {
           placeholder="Enter your name"
           className={css.field}
           id={nameFieldId}
+          as={TextField} fullWidth
         />
         <ErrorMessage name="name" component="span" className={css.error} />
         <label htmlFor={phoneFieldId}>Number</label>
@@ -66,6 +80,7 @@ export default function ContactForm() {
           placeholder="Enter your phone"
           className={css.field}
           id={phoneFieldId}
+          as={TextField} fullWidth
         />
         <ErrorMessage name="number" component="span" className={css.error} />
         <button type="submit" className={css.btn}>

@@ -4,9 +4,32 @@ import css from "../Contact/Contact.module.css";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { deleteContact } from "../../../redux/contacts/operations";
+import { useState } from "react";
 
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
+   
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const handleDeleting = () => {
+    if (isDeleting) { 
+      return
+    } else {
+      setIsDeleting(true)
+    }
+
+    dispatch(deleteContact(contact.id))
+            .unwrap()
+            .then(() => {
+              toast.success("Contact deleted 😁");
+            })
+            .catch(() => {
+              toast.error("Something went wrong... 😥");
+            })
+            .finally(() => {
+              setIsDeleting(false);
+            })
+  }
 
   return (
     <div className={css.card}>
@@ -21,18 +44,10 @@ export default function Contact({ contact }) {
         </li>
       </ul>
       <button
-        onClick={() =>
-          dispatch(deleteContact(contact.id))
-            .unwrap()
-            .then(() => {
-              toast.success("Contact deleted 😁");
-            })
-            .catch(() => {
-              toast.error("Something went wrong... 😥");
-            })
-        }
+        onClick={handleDeleting}
         className={css.btn}
         type="button"
+        disabled={isDeleting}
       >
         Delete
       </button>
