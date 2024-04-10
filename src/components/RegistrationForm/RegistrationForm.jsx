@@ -39,7 +39,7 @@ export default function RegistrationForm() {
           {({ field }) => (
             <TextField
               {...field}
-              id="standard-basic"
+              id="standard-basic-username"
               label="Username"
               variant="standard"
               fullWidth
@@ -51,7 +51,7 @@ export default function RegistrationForm() {
           {({ field }) => (
             <TextField
               {...field}
-              id="standard-basic"
+              id="standard-basic-email"
               label="Email"
               variant="standard"
               fullWidth
@@ -63,7 +63,7 @@ export default function RegistrationForm() {
           {({ field }) => (
             <TextField
               {...field}
-              id="standard-basic"
+              id="standard-basic-password"
               label="Password"
               variant="standard"
               type="password"

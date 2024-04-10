@@ -1,4 +1,4 @@
-import LoginForm from "../../components/LoginForm/LoginForm";
+import LoginForm from "../components/LoginForm/LoginForm";
 import { Box } from "@mui/material";
 // Login
 export default function Login() {
