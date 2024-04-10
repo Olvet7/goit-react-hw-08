@@ -5,7 +5,7 @@ import RecentActorsIcon from '@mui/icons-material/RecentActors';
 export default function Home() {
 
   return (
-    <Box sx={{ color: "var(--accent-color)", marginTop: "20px" }}>
+    <Box sx={{ color: "var(--link-color)", paddingTop: "20px", backgroundImage: "linear-gradient(orange, white)", height: "100%" }}>
       <p>🤗</p>
       <h2>Hi, user!</h2>
       <h4>
